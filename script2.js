@@ -13,34 +13,17 @@ function imprimir(numeros, array1a250, array251a50) {
 }
 
 function sort(numeros) {
-  let array1a250 = [];
-  let array251a50 = [];
-
-  for (let i = 0; i < numeros.length; i++) {
-    if (numeros[i] < 251) {
-      array1a250.push(numeros[i]);
-    } else {
-      array251a50.push(numeros[i]);
-    }
+  let array1a250 = numeros.filter(filterLowerNumbers);
+  function filterLowerNumbers(value) {
+    return value < 251;
   }
 
+  let array251a50 = numeros.filter(filterUpperNumbers);
+  function filterUpperNumbers(value) {
+    return value > 250 && value < 500;
+  }
   imprimir(numeros, array1a250, array251a50);
 }
-
-/*function getNumbers() {
-  let numerosArray = [];
-  for (let i = 0; i < 10; i++) {
-    let numero = parseFloat(
-      prompt(`Entra un numero entre 1 y 500 (numero ${i + 1})`)
-    );
-    if (numero > 0 && numero < 501) {
-      numerosArray[i] = numero;
-    } else {
-      alert("Entra un numero valido");
-    }
-  }
-  sort(numerosArray);
-}*/
 
 function validar(valor) {
   while (isNaN(valor) && numero > 0 && numero < 501) {

@@ -53,10 +53,3 @@ function getNumbers() {
   }
   operar(numeros);
 }
-
-function ejecutar() {
-  getNumbers();
-  parImpar(numeros);
-  positiveNegative(numeros);
-  imprimir();
-}
